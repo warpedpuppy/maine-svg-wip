@@ -28,8 +28,25 @@ svg > #stars polygon:nth-child(odd){
 	animation-direction: reverse;
 }
 
-svg #light path {
-	animation: glow var(--day-length) infinite linear;
+svg #snow path {
+	transform-origin: center;
+	animation: snow-fall 4s infinite linear;
+}
+
+/* svg #snow g {
+	transform-origin: 50% 50%;
+	animation: snow-fall var(--day-length) infinite linear;
+} */
+
+@keyframes snow-fall {
+	0% {
+		
+		transform: translate(0, 0) rotate(-250px);
+	}
+	100% {
+	
+		transform: translate(0, 250px) rotate(360deg);
+	}
 }
 
 @keyframes glow {
@@ -88,7 +105,7 @@ svg #light path {
 	}
 	100% {
 		/* dawn */
-		
+		opacity: 0.5;
 	}
 }
 

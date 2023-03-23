@@ -1,0 +1,47 @@
+svg {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+}
+
+* {
+  transform-box: fill-box;
+}
+.move {
+  transform-origin: center;
+  animation: move-rotate 5s infinite linear;
+}
+.snow-flake {
+  transform-origin: center;
+  animation: move-rotate-down 5s infinite linear;
+}
+
+/* THIS MAKES IT ALL WOBBLY */
+@keyframes move-rotate-wonky {
+  0% {
+    transform: rotate(0) translate(0, 0);
+  }
+  100% {
+    transform: rotate(360deg) translate(132px, 0);
+  }
+}
+
+/* THIS MAKES IT SMOOTH */
+
+@keyframes move-rotate {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    transform: translate(132px, 0) rotate(360deg);
+  }
+}
+
+@keyframes move-rotate-down {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    transform: translate(0, 800px) rotate(360deg);
+  }
+}
