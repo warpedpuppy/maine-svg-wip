@@ -8,7 +8,6 @@ svg * {
 svg > g#sun-moon {
 	transform-origin: 50% 50%;
 	animation: spin var(--day-length) infinite linear;
-	transform: translate(0, 200px)
 }
 
 svg > #sky rect{
@@ -17,6 +16,10 @@ svg > #sky rect{
 
 svg > #stars{
 	transform-origin: 50% 50%;
+	animation: glow var(--day-length) infinite linear;
+}
+
+svg #light {
 	animation: glow var(--day-length) infinite linear;
 }
 
@@ -29,30 +32,36 @@ svg > #stars polygon:nth-child(odd){
 }
 
 svg #snow path {
+	opacity: 0.25;
 	transform-origin: center;
-	animation: snow-fall 4s infinite linear;
+	animation: snow-fall 40s infinite linear;
 }
 
-/* svg #snow g {
+#moon {
 	transform-origin: 50% 50%;
-	animation: snow-fall var(--day-length) infinite linear;
-} */
+	animation: spin var(--day-length) infinite linear;
+	animation-direction: reverse;
+}
 
-@keyframes snow-fall {
+svg #clouds {
+	/* transform-origin: 50% 50%; */
+	animation: clouds-move 10s infinite linear;
+}
+
+@keyframes clouds-move {
 	0% {
-		
-		transform: translate(0, 0) rotate(-250px);
+		transform: translate(500px, 0);
 	}
 	100% {
 	
-		transform: translate(0, 250px) rotate(360deg);
+		transform: translate(-500px, 0)
 	}
 }
 
 @keyframes glow {
 	0% {
 		/* dawn */
-		opacity: 0.25;
+		opacity: 0.1;
 	}
 	25% {
 		/* day */
@@ -60,7 +69,7 @@ svg #snow path {
 	}
 	50% {
 		/* dusk */
-		opacity: 0.5;
+		opacity: 0.75;
 	}
 	75% {
 		/* midnight */
@@ -68,7 +77,7 @@ svg #snow path {
 	}
 	100% {
 		/* dawn */
-		opacity: 0.25;
+		opacity: 0.1;
 	}
 }
 
