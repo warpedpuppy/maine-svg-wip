@@ -8,10 +8,15 @@ svg * {
   transform-box: fill-box;
   transform-origin: 50% 50%;
 }
-svg path {
+svg#snowflake1 path {
   transform-origin: 50% 50%;
   animation: snow-fall 5s infinite linear;
 }
+
+svg#snowflake2 path {
+	transform-origin: 50% 50%;
+	animation: wonky-snow-fall 5s infinite linear;
+  }
 
 /* ROTATE HAS TO COME SECOND  */
 @keyframes snow-fall {
@@ -22,3 +27,12 @@ svg path {
     transform: translate(800px, 0) rotate(360deg);
   }
 }
+
+@keyframes wonky-snow-fall {
+	0% {
+	  transform: rotate(0) translate(0, 0);
+	}
+	100% {
+	  transform: rotate(360deg) translate(800px, 0);
+	}
+  }

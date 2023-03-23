@@ -25,16 +25,10 @@ svg #light {
 
 svg > #stars polygon{
 	transform-origin: 50% 50%;
-	animation: twinkle 5s infinite linear;
+	animation: twinkle 10s infinite linear;
 }
 svg > #stars polygon:nth-child(odd){
 	animation-direction: reverse;
-}
-
-svg #snow path {
-	opacity: 0.25;
-	transform-origin: center;
-	animation: snow-fall 40s infinite linear;
 }
 
 #moon {
