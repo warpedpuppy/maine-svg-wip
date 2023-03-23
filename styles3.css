@@ -1,0 +1,120 @@
+:root {
+	--day-length: 20s;
+}
+
+svg * {
+	transform-box: fill-box;
+}
+svg > g#sun-moon {
+	transform-origin: 50% 50%;
+	animation: spin var(--day-length) infinite linear;
+	transform: translate(0, 200px)
+}
+
+svg > #sky rect{
+	animation: dye var(--day-length) infinite linear;
+}
+
+svg > #stars{
+	transform-origin: 50% 50%;
+	animation: glow var(--day-length) infinite linear;
+}
+
+svg > #stars polygon{
+	transform-origin: 50% 50%;
+	animation: twinkle 5s infinite linear;
+}
+svg > #stars polygon:nth-child(odd){
+	animation-direction: reverse;
+}
+
+svg #light path {
+	animation: glow var(--day-length) infinite linear;
+}
+
+@keyframes glow {
+	0% {
+		/* dawn */
+		opacity: 0.25;
+	}
+	25% {
+		/* day */
+		opacity: 0;
+	}
+	50% {
+		/* dusk */
+		opacity: 0.5;
+	}
+	75% {
+		/* midnight */
+		opacity: 1;
+	}
+	100% {
+		/* dawn */
+		opacity: 0.25;
+	}
+}
+
+@keyframes twinkle {
+	0% {
+		/* dawn */
+		opacity: 0.5;
+		transform: rotate(0)
+	}
+	25% {
+		/* day */
+		opacity: 0.25;
+	}
+	50% {
+		/* dusk */
+		opacity: 0.5;
+	}
+	60% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0.5;
+	}
+	75% {
+		/* midnight */
+		opacity: 1;
+		transform: rotate(360deg)
+	}
+	80% {
+		opacity: 0.5;
+	}
+	85% {
+		opacity: 1;
+	}
+	100% {
+		/* dawn */
+		
+	}
+}
+
+@keyframes dye {
+	0% {
+		fill: darkblue;
+	}
+	25% {
+		fill: lightblue;
+	}
+	50% {
+		fill: darkblue;
+	}
+	75% {
+		fill: black;
+	}
+	100% {
+		fill: darkblue;
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

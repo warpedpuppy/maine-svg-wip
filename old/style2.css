@@ -1,0 +1,40 @@
+div {
+	animation-name: move;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+	width: 50px;
+	height: 50px;
+	border:1px solid black;
+}
+svg {
+	border: 1px solid black;
+}
+svg * {
+	transform-box: fill-box;
+}
+#rect236,
+#path1439,
+#g2885,
+#g9421-90 {
+	animation-name: move;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+	border:1px solid black;
+}
+#path521 {
+	animation-name: move;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+}
+
+@keyframes move {
+	0%{
+		transform: translate(0, 0) rotate(0);
+	}
+	100%{
+		transform: translate(0, 595px) rotate(360deg);
+	}
+}
