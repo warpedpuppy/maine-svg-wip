@@ -10,7 +10,8 @@ svg > g#sun-moon {
 	animation: spin var(--day-length) infinite linear;
 }
 
-svg > #sky rect{
+svg > #sky rect,
+#mtn-backing path {
 	animation: dye var(--day-length) infinite linear;
 }
 
@@ -38,7 +39,6 @@ svg > #stars polygon:nth-child(odd){
 }
 
 svg #clouds {
-	/* transform-origin: 50% 50%; */
 	animation: clouds-move 10s infinite linear;
 }
 
@@ -55,59 +55,65 @@ svg #clouds {
 @keyframes glow {
 	0% {
 		/* dawn */
-		opacity: 0.1;
+		opacity: 0.75;
 	}
 	25% {
 		/* day */
-		opacity: 0;
+		opacity: 1;
 	}
 	50% {
 		/* dusk */
-		opacity: 0.75;
+		opacity: 0.1;
 	}
 	75% {
 		/* midnight */
-		opacity: 1;
+		opacity: 0;
 	}
 	100% {
 		/* dawn */
-		opacity: 0.1;
+		opacity: 0.75;
 	}
 }
 
 @keyframes twinkle {
 	0% {
-		/* dawn */
+		/* dusk */
 		opacity: 0.5;
 		transform: rotate(0)
 	}
+	10% {
+		opacity: 0.15;
+		transform: scale(1);
+	}
+	15% {
+		opacity: 0.5;
+		transform: scale(0.5);
+		
+	}
 	25% {
-		/* day */
-		opacity: 0.25;
+		/* midnight */
+		opacity: 0.15;
+		transform: rotate(360deg) scale(2);
+	}
+	30% {
+		opacity: 0.5;
+		transform: scale(0.5);
+	}
+	35% {
+		opacity: 0.15;
+		transform: rotate(0) scale(1);
 	}
 	50% {
-		/* dusk */
-		opacity: 0.5;
-	}
-	60% {
-		opacity: 1;
-	}
-	70% {
+		/* dawn */
 		opacity: 0.5;
 	}
 	75% {
-		/* midnight */
+		/* day */
 		opacity: 1;
-		transform: rotate(360deg)
-	}
-	80% {
-		opacity: 0.5;
-	}
-	85% {
-		opacity: 1;
+		transform: rotate(360deg) scale(0);
 	}
 	100% {
-		/* dawn */
+		/* dusk */
 		opacity: 0.5;
 	}
 }
@@ -117,13 +123,13 @@ svg #clouds {
 		fill: darkblue;
 	}
 	25% {
-		fill: lightblue;
+		fill: black;
 	}
 	50% {
 		fill: darkblue;
 	}
 	75% {
-		fill: black;
+		fill: lightblue;
 	}
 	100% {
 		fill: darkblue;
